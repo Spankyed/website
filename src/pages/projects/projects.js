@@ -8,8 +8,7 @@ import Project from './project.js'
 let ProjectLink = ({match, project}) => {
   return (
     <Link to={`${match.path}/${project.id}`} class="project-list px-4 sm:flex sm:justify-around sm:flex-wrap">
-      <div class="project bg-reddish shadow-lg border border-yellow mb-8 sm:w-45">
-        <a href="./my-task-grid" class="project-link no-underline text-grey-80">
+      <div class="project-link  bg-reddish shadow-lg border border-yellow text-grey-80 mb-8 sm:w-45">
           <header class="project-thumbnail relative h-64 border-b-4 border-yellow bg-cover bg-center" style={`background-image: url(${project.image});`}>
             <div class="overlay flex items-end justify-center px-2 absolute h-full w-full bg-black-alpha-30">
               <h2 class="bg-yellow text-xl text-black p-4">{project.title}</h2>
@@ -21,7 +20,6 @@ let ProjectLink = ({match, project}) => {
             </div>  
             <p class="my-3">{project.description}</p>
           </div>
-        </a>
       </div>
     </Link> 
   )
