@@ -1,73 +1,32 @@
 import { h } from 'hyperapp';
 
-// Projects Module
-// initial: data.projects
-export default initial => ({
-  state: {
-    value: initial
-  },
-  actions: {
-    //decrement: by => (state, actions) => { return { value: state.value - by } },
-    increment: (evt) => state => ({ value: state.value + evt.value }),
-  },
-  view: (state, actions) => _ => (
-    <div class="container mx-auto min-h-screen">
-      <section class="leading-tight py-6 px-4">
-        <div class="bg-gray-700 text-white py-2 sm:w-5/6 sm:mx-auto">
-          <header class="bg-cyan-300">
-            <div class="container">
-                <div class="text-white font-serif text-center">
-                    <h1 class="font-serif font-black text-5xl mb-2">Projects</h1>
-                    <h2 class="font-light">Applications I've designed and developed.</h2>
-                </div>
-            </div>
-          </header>   
-        </div>
-      </section>
+// Blogs Module
+// initial: data.blogs
+export default (projects, actions) => ({match}) => {
+  var project = projects.filter(project => project.id == match.params.project_id )[0]
+  return (
+    <section>
+      <div class="hidden mx-auto lg:block w-full bg-center bg-no-repeat" style={`background-size: 1450px; height:80vh; background-image:url(${project.image});`}>
+        <h1 class="title text-center align-bottom text-yellow pb-4 text-4xl md:text-6xl"  style ="line-height:60vh;">{project.title}</h1>             
+      </div> 
+      <div class="block lg:hidden w-full bg-no-repeat" style={`background-size: 850px; background-position: 50% 0%; height:60vh; background-image:url(${project.image});`}>
+        <h1 class="title text-center align-bottom text-yellow pb-4 text-4xl md:text-6xl"  style ="line-height:60vh">{project.title}</h1>             
 
-      <section class="project-list px-4 sm:flex sm:justify-around sm:flex-wrap">
-
-        <div class="project bg-reddish shadow-lg border border-yellow mb-8 sm:w-45">
-          <a href="./my-task-grid" class="project-link no-underline text-grey-80">
-            <header class="relative project-thumbnail h-64 border-b-4 border-yellow bg-cover bg-center" style="background-image: url('https://res.cloudinary.com/duua3lsu1/image/upload/v1557590908/blog/task-grid-thumbnail.png');">
-              <div class="overlay flex items-end justify-center px-2 absolute h-full w-full bg-black-alpha-30">
-                <h2 class="bg-yellow text-xl text-black p-4">My Task Grid</h2>
-              </div>
-            </header>
-            <div class="project-summary text-grey-80 p-4 text-center leading-normal">
-              <div>
-                <span class="border-b-2 border-grey-60">Javascript | React | Sass</span>
-              </div>  
-              <p class="my-3">Task management app built with Reacts</p>
-            </div>
-          </a>
-        </div>
-
-      </section>
-
-    </div>
-  )
-});
-
-//class={`font-light bg-${theme}-dark text-${theme}-darker hover:bg-${theme}-lighter`}
-/*
-{
-  state.cart.filter(res => res.id )
-  .map( res => 
-
-      <CartItems movie_id={res.id}
-      title={res.movie_title}
-      price={res.price}
-      quantity= {res.quantity}
-      total= {res.quantity * res.price }
-      poster= {res.movie_poster}
-      />
-
+      </div>
+      
+      <div class="bg-reddish container w-full mx-auto md:max-w-3xl -mt-32">       
+        <div class="w-full px-4 md:px-6 text-xl text-gray-100 leading-normal" style="font-family:Georgia,serif;">
+          <div class="font-sans">
+            <span class="text-base md:text-sm text-teal-500 font-bold">
+              <span>
+              </span>
+            </span>
+          </div>
+          <p class="py-6">{project.text}</p>
+  
+        </div>    
+      </div> 
+    </section>
   )
 }
- <Enter time={200} easing="ease-in-out" 
-        css={{opacity: "0", transform: "scale(1,1)"}}>
 
-        import { Enter } from "@hyperapp/transitions"
-
-<Link to={`/details/${movie_id}`} ></Link>*/

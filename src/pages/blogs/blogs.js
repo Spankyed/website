@@ -1,9 +1,46 @@
 import { h } from 'hyperapp';
-import { Link, Route, location } from "@hyperapp/router"
+import { Link, Route } from "@hyperapp/router"
 import Blog from './blog.js'
 
 // Blogs Module
 // initial: data.blogs
+
+let BlogLink = ({match, blog}) => {
+  return (
+    <Link to={`${match.path}/${blog.id}`} class="mx-auto mb-8 bg-reddish rounded-lg shadow block flex-wrap flex w-full text-white" href="/updating-to-babel-7.4/">
+      <div class="w-full md:w-1/2 shadow bg-dark-100 rounded-lg rounded-r-none min-h-featured-item bg-center bg-no-repeat"
+      style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/007/027/571/large/greg-rutkowski-dragon-cave-1920.jpg?1503141992);
+              background-size: 1100px;">
+      </div>
+      <div class="w-full md:w-1/2 p-4">
+        <div class="border-b border-gray-700">
+          <h3 class="font-bold text-3xl mb-4 inline-block ">{blog.title}</h3>   
+          <span class="pl-2 text-sm text-gray-800 font-semibold">
+            - {blog.date}
+          </span>
+        </div>
+
+        <p class="text-gray-200 my-4 h-24 text-base trunc">{blog.description} 
+        </p>
+
+        <div class="text-gray-800 flex items-center justify-between pt-2">
+          <div>
+          {
+            blog.tags
+            .map( tag => (
+              <span class="inline-block text-xs py-1 px-2 mt-0 mr-2 rounded-sm mb-1 ml-0 text-grey-darker bg-yurp leading-none">
+              #{tag}
+              </span>
+            ))
+          }
+          </div>
+          <p class="text-xs md:text-sm font-semibold">3 MIN READ</p>
+        </div>       
+      </div>
+    </Link>
+  )
+}
+
 export default initial => ({
   state: {
     blogs: initial
@@ -33,57 +70,23 @@ export default initial => ({
               </header>     
             </div>
           </section>
+          {
+            state.blogs
+            .map( blog => (
+              <BlogLink blog={blog} match={match}/>
+            ))
+          }
 
-
-    
-          <Link to={`${match.path}/1`} class="mx-auto mb-8 bg-reddish rounded-lg shadow block flex-wrap flex w-full text-white" href="/updating-to-babel-7.4/">
-            <div class="w-full md:w-1/2 shadow bg-dark-100 rounded-lg rounded-r-none min-h-featured-item bg-center bg-no-repeat"
-            style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/007/027/571/large/greg-rutkowski-dragon-cave-1920.jpg?1503141992);
-                    background-size: 1100px;">
-            </div>
-            <div class="w-full md:w-1/2 p-4">
-              <div class="border-b border-gray-700">
-                <h3 class="font-bold text-3xl mb-4 inline-block ">Dungeons & Developers </h3>   
-                <span class="pl-2 text-sm text-gray-800 font-semibold">
-                  - June 12, 2019
-                </span>
-              </div>
-    
-              <p class="text-gray-200 my-4 h-24 text-base trunc">Alright so Im not a crappy person. Sometimes I just think like one. 
-              Like this afternoon when I got a message from someone "looking for help with web design". It was obvious the guy had messaged the wrong person. I'm a web developer (aka software developer/engineer). Not a web designer... 
-              </p>
-      
-              <div class="text-gray-800 flex items-center justify-between pt-2">
-                <div>
-                <span class="inline-block text-xs py-1 px-2 mt-0 mr-2 rounded-sm mb-1 ml-0 text-grey-darker bg-yurp leading-none">
-                #Design
-              </span>
-              <span class="inline-block text-xs py-1 px-2 mt-0 mr-2 rounded-sm mb-1 ml-0 text-grey-darker bg-yurp leading-none">
-                #Devopment
-              </span>
-              <span class="inline-block text-xs py-1 px-2 mt-0 mr-2 rounded-sm mb-1 ml-0 text-grey-darker bg-yurp leading-none">
-                #Javascript
-              </span>
-              <span class="inline-block text-xs py-1 px-2 mt-0 mr-2 rounded-sm mb-1 ml-0 text-grey-darker bg-yurp leading-none">
-                #Mangos
-              </span>
-                </div>
-                <p class="text-xs md:text-sm font-semibold">3 MIN READ</p>
-              </div>       
-            </div>
-          </Link>
         </div>
         )       
-        }     
+      }     
       </div>
-      )
+    )
   }
 });
-/*
-{
-  state.cart.filter(res => res.id )
-  .map( res => res)}
-var blog = (state, actions) => ({match}) => {}*/
+/* switch might eliminate coniditional
+<Switch></Switch>
+*/
 
 
 

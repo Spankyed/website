@@ -6,8 +6,8 @@ import  Blogs  from './pages/blogs/blogs'
 import  Projects  from './pages/projects/projects'
 import  data  from './data'
 
-const blogs = Blogs(data.blogs) // data.blogs set initial values for module
-const projects = Projects()
+const blogs = Blogs(data.blogs) // data.blogs sets initial value for module
+const projects = Projects(data.projects)
 
 const state = {
   location: location.state, // router module
@@ -16,7 +16,7 @@ const state = {
 }
 
 const actions = {
-  location: location.actions, // router module
+  location: location.actions,
   blogs: blogs.actions,
   projects: projects.actions
 }
@@ -31,13 +31,13 @@ const view = ( state, actions ) => {
     <div>
       <Switch>    
         <Route path="/" render={ Home } />   
-        <Route path="/projects" render={ index.projects } />    
+        <Route parent path="/projects" render={ index.projects } />    
         <Route parent path="/blogs" render={ index.blogs } />        
       </Switch>
     </div>
   )
 }
-//<Route path="/blogs" render={ index.blogs } />    
+
 const main = app(state, actions, view, document.body)
 
 const unsubscribe = location.subscribe(main.location)

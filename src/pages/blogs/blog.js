@@ -2,15 +2,14 @@ import { h } from 'hyperapp';
 
 // Blogs Module
 // initial: data.blogs
-export default (state, actions) => ({match}) => {
-  var blog = getBlogById(state,match.params.blog_id)[0]
+export default (blogs, actions) => ({match}) => {
+  var blog = blogs.filter(blog => blog.id == match.params.blog_id )[0]
   return (
-    <div class="">
+    <section>
       <div class="hidden lg:block w-full bg-center bg-no-repeat" style={`background-size: 1450px; height:80vh; background-image:url(${blog.image});`}></div> 
       <div class="block lg:hidden w-full bg-no-repeat" style={`background-size: 850px; background-position: 50% 0%; height:60vh; background-image:url(${blog.image});`}></div>
       
-      <div class="container w-full mx-auto md:max-w-3xl">
-         
+      <div class="container w-full mx-auto md:max-w-3xl">       
         <div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal" style="font-family:Georgia,serif;">
           <div class="font-sans">
             <span class="text-base md:text-sm text-teal-500 font-bold">
@@ -22,18 +21,11 @@ export default (state, actions) => ({match}) => {
           </div>
           <p class="py-6">{blog.text}</p>
   
-        </div>
-      
-      </div>
-  
-    </div>
+        </div>    
+      </div> 
+    </section>
   )
 }
-
-function getBlogById(blogs, id){
-  return blogs.filter(blog => blog.id == id)
-}
-
 /*
 export default {
   down: ({ id, value }) => state => ({

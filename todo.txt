@@ -7,6 +7,7 @@ consider move styles shared by buttons to containing div; except ones like hover
 -home - https://colorhunt.co/palette/3590?ref=tab
 -https://colorhunt.co/palette/44430?ref=tab
 -https://colorhunt.co/palette/149559
+-live button should pulse - tailwind-animate
 
 create data abstraction layer so dynamic/easy to add content work on 
 add tags (and take examples/synonyms)
@@ -30,6 +31,7 @@ ___chatbot
 talk with matt about designing portions
 file:///C:/Users/17863/Documents/project/apps/css/tails/dist/chatbot.html - https://github.com/lucas-j-k/my-task-grid
 create canvas base node-tree
+https://tailwindcomponents.com/component/trello-panel-clone
 
 ___scheduler
 work on canvas timeline
