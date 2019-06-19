@@ -1,25 +1,30 @@
-## Tailwind Starter
+# Hyperapp-Tailwind-Parcel
 
-#### A starter kit to get going with tailwind, gulp and browser-sync.
+## A Stack for 🚀 front-end design/developpement in 2019.
 
-![tailwind starter kit](https://i.imgur.com/gdQSqZX.png)
+I want to build an app with good ux/performance and have fun while doing it:
 
-Time to design in the browser and create something awesome with [tailwind](https://tailwindcss.com)!
+- [x] Quick protoyping possible as well as complex production apps
+- [x] Design, build and iterate straight in the browser
+- [x] 0 configuration but powerful developpement tools (babel, postcss, tailwind, jsx, etc...)
+- [x] Stay close to vanilla ES6
+- [x] Light, fast & powerful
+- [x] [SRR](https://github.com/hyperapp/hyperapp#hydration) should be easy
 
-This starter kit gives you a [browser-sync dev server](https://browsersync.io), which comes pretty handy. Everytime you save a HTML file, your browser will inject new styles / reload the page for your convenience, so you can focus on what you're creating.
+## Example  
+Check [Rocket Emoji](https://github.com/gary149/rocket-emoji) for a working example.
 
-Go ahead and build something cool!
+## Dependencies:
 
-### How to get started?
+- [Hyperapp](https://github.com/hyperapp/hyperapp) - Minimal (1kb), Functional + Stateless components
+- [Tailwind](https://tailwindcss.com/docs/what-is-tailwind/) - Not a UI kit but a utility-first CSS framework
+- [Parcel](https://parceljs.org/getting_started.html) (Bundler) - Fast, 0 config
+- [Purgecss](https://github.com/FullHuman/purgecss) - Remove unused css classes
+- [JSX](https://www.npmjs.com/package/babel-plugin-transform-react-jsx) - Write HTML tags inside javascript
 
-1. Clone this repo
-2. `yarn` or `npm install` to install the required dependencies
-3. Customise the `tailwind.js` config file (only if needed!)
-4. `gulp` to kickoff the dev server, and open your browser window. Optionally you can run the following:
-	* `yarn dev` or `npm run dev` to start the development server
-	* `yarn build` or `npm run build` to run a build without starting the server
-5. Edit `index.html` in `./dist/` and start creating!
+## Usage
 
-If you make changes to the tailwind config, you may need to stop and restart the browser-sync server for changes to apply.
+Just fork this repository and you are ready to go
 
-**Have fun!** 🎉
+1. `npm install`
+2. `npm run dev`
