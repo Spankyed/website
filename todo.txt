@@ -9,6 +9,8 @@ consider move styles shared by buttons to containing div; except ones like hover
 -https://colorhunt.co/palette/149559
 -live button should pulse - tailwind-animate
 
+add image courtesy of
+
 create data abstraction layer so dynamic/easy to add content work on 
 add tags (and take examples/synonyms)
 add admin/analytics page with analytics: like search queries
@@ -27,14 +29,35 @@ https://zaceno.github.io/hypercraft/post/modular-apps/
 https://zaceno.github.io/hypercraft/index.html
 tool!! - 	https://nerdcave.com/tailwind-cheat-sheet?ref=builtwithtailwind.com
 https://www.udemy.com/hands-on-web-development-with-hyperapp-v2/
+
+meta tags: https://css-tricks.com/essential-meta-tags-social-media/
+
+___admin
+home should have preview of game, and control center
+https://www.carbondesignsystem.com/components/date-picker/code
+
+have links as notes: https://github.com/notable/notable
+https://medium.com/@tarique_ejaz/progressive-web-app-push-notifications-making-the-web-app-more-native-in-nature-a167af22e004
 ___chatbot
 talk with matt about designing portions
+
+feature: as you type chatbox should preview text
+
+http://ai-design.eu-de.mybluemix.net/design/ai/conversation/planning/
+https://www.carbondesignsystem.com/experimental/chatbot/content
+
 file:///C:/Users/17863/Documents/project/apps/css/tails/dist/chatbot.html - https://github.com/lucas-j-k/my-task-grid
 create canvas base node-tree
 https://tailwindcomponents.com/component/trello-panel-clone
 
+https://www.thebrain.com/
+https://www.notion.so/product - fundraising database
+https://synapbook.com/
+
 ___scheduler
 work on canvas timeline
+https://www.carbondesignsystem.com/components/date-picker/code
+https://colorhunt.co/palette/42568?ref=tab
 
 ___world editor
 no planned development
@@ -43,3 +66,37 @@ ___artwork
 come up with 900 bucks
 get cover art from marcin
 https://www.artstation.com/rutkowski
+mascot : https://i2.wp.com/www.whats-your-sign.com/wp-content/uploads/2018/02/RavenSymbolism5.jpg?zoom=1.5&w=735&ssl=1
+
+___music
+to late to apologize
+gangstas paradise
+zombie
+the lion sleeps
+halleulujah
+
+
+___projects
+metasploit.pro - security
+
+fetch a color palette from colorhunt.co and use it as theme for admin page.
+-objective: make websites more personalized
+-primary, secondary, tertiary, quaternary colors
+
+
+record issues: ttps://github.com/jaredgorski/Swatchmaker/issues
+
+html event handler attributes: https://www.quackit.com/html_5/tags/html_code_tag.cfm
+
+
+top markdown editors considered: easymde, prosemirror, stackedit, honestedit, tinymce, pell
+
+format jsx by adding closing tags to html 
+
+
+--recorder
+-https://blog.toggl.com/html-canvas-createjs/
+https://colorhunt.co/palette/9214?ref=tab
+
+
+blog-dont be sassy, just get started

@@ -2,7 +2,7 @@ import { h } from 'hyperapp'
 import { Link } from "@hyperapp/router"
 
 export default (state, actions) => (
-  <div class="bg-wurp max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
+  <div class="bg-wurp max-w-3xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
 
     <div class="w-full lg:w-2/5 ">
       <img src="https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/538135_477566988970424_1936353685_n.jpg?_nc_cat=111&_nc_oc=AQm4YNH3OJb-ZSHnFrW-6kETx2ecxDBUKOE8CQbgXLQSdOLqer_iqG-LmUveQ5JKwFMLtAUNox8CFMRqNSDe4CRP&_nc_ht=scontent-mia3-2.xx&oh=4c570dac25f794b8e68ceab0d2095342&oe=5D98B609" 
@@ -25,8 +25,8 @@ export default (state, actions) => (
         </p>
         <p class="pt-8 font-semibold text-gray-200">Engineering personalized solutions to complex problems.</p>
 
-        <div class="pt-12 pb-8 flex items-center justify-center">
-          <div class="flex rounded border-b-2 border-gray-400 mx-4">
+        <div class="pt-12 pb-8 mx-auto flex items-center justify-center">
+          <div class="flex rounded border-b-2 border-gray-400 mx-2">
             <button class="block text-white text-sm shadow-border bg-blue-700 hover:bg-blue-900 text-sm py-3 px-4 font-sans tracking-wide uppercase font-bold">
             Live
             </button>
@@ -36,7 +36,7 @@ export default (state, actions) => (
               </div>
             </div>
           </div>
-          <Link to='/projects' class="flex rounded border-b-2 border-gray-400 mx-4">
+          <Link to='/projects' class="flex rounded border-b-2 border-gray-400 mx-2">
             <button class="block text-white text-sm shadow-border bg-green-700 hover:bg-green-900 text-sm py-3 px-4 font-sans tracking-wide uppercase font-bold">
             Projects
             </button>
@@ -47,7 +47,7 @@ export default (state, actions) => (
             </div>
           </Link>
 
-          <Link to='/blogs' class="flex rounded border-b-2 border-gray-400 mx-4">
+          <Link to='/blogs' class="flex rounded border-b-2 border-gray-400 mx-2">
             <button class="block text-white text-sm shadow-border bg-green-700 hover:bg-green-900 text-sm py-3 px-4 font-sans tracking-wide uppercase font-bold">
             Blog
             </button>

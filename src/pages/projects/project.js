@@ -1,7 +1,7 @@
 import { h } from 'hyperapp';
 
-// Blogs Module
-// initial: data.blogs
+// Projects Module
+
 export default (projects, actions) => ({match}) => {
   var project = projects.filter(project => project.id == match.params.project_id )[0]
   return (
@@ -14,7 +14,7 @@ export default (projects, actions) => ({match}) => {
 
       </div>
       
-      <div class="bg-reddish container w-full mx-auto md:max-w-3xl -mt-32">       
+      <div class="bg-reddish container w-full mx-auto max-w-5xl -mt-32 border-4 border-gray-700">       
         <div class="w-full px-4 md:px-6 text-xl text-gray-100 leading-normal" style="font-family:Georgia,serif;">
           <div class="font-sans">
             <span class="text-base md:text-sm text-teal-500 font-bold">

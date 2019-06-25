@@ -3,44 +3,45 @@ import { Link, Route } from "@hyperapp/router"
 import Blog from './blog.js'
 
 // Blogs Module
-// initial: data.blogs
 
 let BlogLink = ({match, blog}) => {
   return (
-    <Link to={`${match.path}/${blog.id}`} class="mx-auto mb-8 bg-reddish rounded-lg shadow block flex-wrap flex w-full text-white" href="/updating-to-babel-7.4/">
+    <Link to={`${match.path}/${blog.id}`} class="mx-auto mb-8 mx-2 bg-reddish rounded-lg shadow block flex-wrap flex w-full text-white" href="/updating-to-babel-7.4/">
       <div class="w-full md:w-1/2 shadow bg-dark-100 rounded-lg rounded-r-none min-h-featured-item bg-center bg-no-repeat"
-      style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/007/027/571/large/greg-rutkowski-dragon-cave-1920.jpg?1503141992);
-              background-size: 1100px;">
+      style={`background-image: url(${blog.image});
+              background-size: ${blog.imgSizes[0]};`}>
       </div>
       <div class="w-full md:w-1/2 p-4">
-        <div class="border-b border-gray-700">
-          <h3 class="font-bold text-3xl mb-4 inline-block ">{blog.title}</h3>   
-          <span class="pl-2 text-sm text-gray-800 font-semibold">
-            - {blog.date}
-          </span>
+        <div class="border-b border-gray-700 text-center">
+          <p class="text-sm md:text-base font-normal text-gray-700 -pt-1 -mb-1">
+            {blog.date}
+          </p>
+          <h3 class="font-bold text-3xl mb-2 inline-block text-gray-200">{blog.title}</h3>   
+
         </div>
 
-        <p class="text-gray-200 my-4 h-24 text-base trunc">{blog.description} 
+        <p class="text-gray-200 my-4 h-auto text-base overflow-hidden">{blog.description} 
         </p>
 
-        <div class="text-gray-800 flex items-center justify-between pt-2">
+        <div class="text-gray-800 flex items-center justify-between">
           <div>
           {
             blog.tags
             .map( tag => (
-              <span class="inline-block text-xs py-1 px-2 mt-0 mr-2 rounded-sm mb-1 ml-0 text-grey-darker bg-yurp leading-none">
+              <span class="inline-block rounded-sm text-xs text-grey-darker bg-yurp py-1 px-2 mr-2 mb-1 ml-0 leading-none">
               #{tag}
               </span>
             ))
           }
           </div>
-          <p class="text-xs md:text-sm font-semibold">3 MIN READ</p>
+          <p class="text-xs md:text-sm font-semibold">{blog.readTime} MIN READ</p>
         </div>       
       </div>
     </Link>
   )
 }
 
+// initial: data.blogs
 export default initial => ({
   state: {
     blogs: initial
