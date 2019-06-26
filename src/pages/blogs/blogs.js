@@ -6,7 +6,7 @@ import Blog from './blog.js'
 
 let BlogLink = ({match, blog}) => {
   return (
-    <Link to={`${match.path}/${blog.id}`} class="mx-auto mb-8 mx-2 bg-reddish rounded-lg shadow block flex-wrap flex w-full text-white" href="/updating-to-babel-7.4/">
+    <Link to={`${match.path}/${blog.id}`} class="mx-auto mb-8 mx-8 bg-reddish rounded-lg shadow block flex-wrap flex w-11/12 text-white" href="/updating-to-babel-7.4/">
       <div class="w-full md:w-1/2 shadow bg-dark-100 rounded-lg rounded-r-none min-h-featured-item bg-center bg-no-repeat"
       style={`background-image: url(${blog.image});
               background-size: ${blog.imgSizes[0]};`}>
