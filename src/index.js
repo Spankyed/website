@@ -6,6 +6,7 @@ import  Blogs  from './pages/blogs/blogs'
 import  Projects  from './pages/projects/projects'
 import  data  from './data'
 
+
 const blogs = Blogs(data.blogs) // data.blogs sets initial value for module
 const projects = Projects(data.projects)
 

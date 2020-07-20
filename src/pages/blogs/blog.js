@@ -31,7 +31,7 @@ export default (blogs, actions) => ({match}) => {
           </div>
 
           {/* Blog Markdown */}
-          <div class="py-6 markdown-body" oncreate={compile}></div>
+          <div class="py-6 markdown-body text-gray-900" oncreate={compile}></div>
         </div>    
       </div> 
     </section>

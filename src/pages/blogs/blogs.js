@@ -65,7 +65,7 @@ export default initial => ({
                 <div class="container">
                     <div class="text-white font-serif text-center">
                         <h1 class="font-serif font-black text-5xl mb-2">Blog</h1>
-                        <h2 class="font-light">The Communist Soapbox.</h2>
+                        <h2 class="font-light">The Web Developer Soapbox.</h2>
                     </div>
                 </div>
               </header>     

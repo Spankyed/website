@@ -1,18 +1,30 @@
 import { h } from 'hyperapp'
 import { Link } from "@hyperapp/router"
 
+var imgUrl = "https://i.ibb.co/y83tr7m/fix-that.png"
+
+function aclick(){
+  alert(` 
+  Wow you really clicked the button... 
+  This feature is still very early in development
+  Try again much, much later
+  \n In the meantime, here some background music 
+  \n FYI: if you're ever on sketchy page, leave immediately and avoid clicking anything. It could be the catalyst for a hack`)
+}
+
+
 export default (state, actions) => (
   <div class="bg-wurp max-w-3xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
 
     <div class="w-full lg:w-2/5 ">
-      <img src="https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/538135_477566988970424_1936353685_n.jpg?_nc_cat=111&_nc_oc=AQm4YNH3OJb-ZSHnFrW-6kETx2ecxDBUKOE8CQbgXLQSdOLqer_iqG-LmUveQ5JKwFMLtAUNox8CFMRqNSDe4CRP&_nc_ht=scontent-mia3-2.xx&oh=4c570dac25f794b8e68ceab0d2095342&oe=5D98B609" 
+      <img src= {imgUrl}
       class="shadow-2xl hidden lg:block rounded-sm"></img>
     </div>
 
     <div id="profile" class="flex w-full lg:w-3/5 shadow-2xl bg-reddish mx-6 lg:mx-0 rounded-sm">
       <div class="w-full pt-8 md:px-12 md:pb-6 text-center lg:text-left">
 
-        <div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center border-solid border-4 shadow-inset" style="background-image: url('https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/538135_477566988970424_1936353685_n.jpg?_nc_cat=111&_nc_oc=AQm4YNH3OJb-ZSHnFrW-6kETx2ecxDBUKOE8CQbgXLQSdOLqer_iqG-LmUveQ5JKwFMLtAUNox8CFMRqNSDe4CRP&_nc_ht=scontent-mia3-2.xx&oh=4c570dac25f794b8e68ceab0d2095342&oe=5D98B609')"></div>
+        <div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center border-solid border-4 shadow-inset" style={`background-image: url('${imgUrl}')`}></div>
         <h1 class="text-4xl font-bold pt-8 lg:pt-0">Angel Santiago</h1>
         <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-gray-900 opacity-25"></div>
         <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start text-gray-200">
@@ -27,7 +39,7 @@ export default (state, actions) => (
 
         <div class="pt-12 pb-8 mx-auto flex items-center justify-center">
           <div class="flex rounded border-b-2 border-gray-400 mx-2">
-            <button class="block text-white text-sm shadow-border bg-blue-700 hover:bg-blue-900 text-sm py-3 px-4 font-sans tracking-wide uppercase font-bold">
+            <button onclick={aclick} class="block text-white text-sm shadow-border bg-blue-700 hover:bg-blue-900 text-sm py-3 px-4 font-sans tracking-wide uppercase font-bold">
             Live
             </button>
             <div class="bg-blue-400 shadow-border p-3">
