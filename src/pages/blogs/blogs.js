@@ -4,9 +4,9 @@ import Blog from './blog.js'
 
 // Blogs Module
 
-let BlogLink = ({match, blog}) => {
+let BlogLink = ({match, blog, setBlog}) => {
   return (
-    <Link to={`${match.path}/${blog.id}`} class="mx-auto mb-8 mx-8 bg-reddish rounded-lg shadow block flex-wrap flex w-11/12 text-white" href="/updating-to-babel-7.4/">
+    <Link onclick={setBlog(blog)}to={`${match.path}/${blog.id}`} class="mx-auto mb-8 mx-8 bg-reddish rounded-lg shadow block flex-wrap flex w-11/12 text-white" href="/updating-to-babel-7.4/">
       <div class="w-full md:w-1/2 shadow bg-dark-100 rounded-lg rounded-r-none min-h-featured-item bg-center bg-no-repeat"
       style={`background-image: url(${blog.image});
               background-size: ${blog.imgSizes[0]};`}>
@@ -20,8 +20,7 @@ let BlogLink = ({match, blog}) => {
 
         </div>
 
-        <p class="text-gray-200 my-4 h-auto text-base overflow-hidden">{blog.description} 
-        </p>
+        <p class="text-gray-200 my-4 h-auto text-base overflow-hidden">{blog.description}</p>
 
         <div class="text-gray-800 flex items-center justify-between">
           <div>
@@ -44,18 +43,23 @@ let BlogLink = ({match, blog}) => {
 // initial: data.blogs
 export default initial => ({
   state: {
-    blogs: initial
+    blogs: initial,
+    blog: {},
+    ...Blog.state,
   },
   actions: {
-    increment: (evt) => state => ({ cat: 'meow' }),
+    setBlog: (blog) => state => ({ blog: blog }),
+    ...Blog.actions,
   },
   view: (state, actions) => ({match}) => {
+    const BlogView = Blog.view
+
     return (
       <div>
       {
         match.params
         ?
-        (<Route parent path={`${match.path}/:blog_id`} render={ Blog(state.blogs, actions) } />)
+        (<Route parent path={`${match.path}/:blog_id`} render={ BlogView(state, actions) } />)
         :
         (
         <div class="container mx-auto min-h-screen">
@@ -74,7 +78,7 @@ export default initial => ({
           {
             state.blogs
             .map( blog => (
-              <BlogLink blog={blog} match={match}/>
+              <BlogLink blog={blog} match={match} setBlog={actions.setBlog}/>
             ))
           }
 

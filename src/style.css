@@ -3,6 +3,15 @@
 
 @tailwind components;
 
+
+.highlight {
+  background-color: #ddd;
+  cursor: pointer;
+}
+.highlight:hover {
+  background-color: yellow;
+}
+
 .bg-wurp {
     background: #efecea;
 }

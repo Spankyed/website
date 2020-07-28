@@ -4,11 +4,13 @@ import { Link } from "@hyperapp/router"
 var imgUrl = "https://i.ibb.co/y83tr7m/fix-that.png"
 
 function aclick(){
+  var audio = new Audio('im_not_racist.mp3');
+  audio.play();
   alert(` 
   Wow you really clicked the button... 
   This feature is still very early in development
   Try again much, much later
-  \n In the meantime, here some background music 
+  \n In the meantime, here some background music (maybe)
   \n FYI: if you're ever on sketchy page, leave immediately and avoid clicking anything. It could be the catalyst for a hack`)
 }
 
