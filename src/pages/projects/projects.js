@@ -5,22 +5,23 @@ import Project from './project.js'
 // Projects Module
 
 let ProjectLink = ({match, project}) => {
+  function routeClick(project){ return project.external ? project.link : `${match.path}/${project.id}`}
   return ( 
-      <div class="project-link bg-reddish shadow-lg border border-yellow text-grey-80 w-full max-w-lg mb-8 md:mx-8">
-        <Link to={`${match.path}/${project.id}`} class="project-link no-underline ">
-          <header class="project-thumbnail relative h-64 border-b-4 border-yellow bg-cover bg-center" style={`background-image: url(${project.image});`}>
-            <div class="overlay flex items-end justify-center px-2 absolute h-full w-full bg-black-alpha-30">
-              <h2 class="bg-yellow text-xl text-black p-4">{project.title}</h2>
-            </div>
-          </header>
-          <div class="project-summary text-grey-80 p-4 text-center leading-normal">
-            <div>
-              <span class="border-b-2 border-grey-60">{project.tools}</span>
-            </div>  
-            <p class="my-3">{project.description}</p>
+    <div class="project-link bg-reddish shadow-lg border border-yellow text-grey-80 w-full max-w-lg mb-8 md:mx-8">
+      <Link to={ routeClick(project) } class="project-link no-underline ">
+        <header class="project-thumbnail relative h-64 border-b-4 border-yellow bg-cover bg-center" style={`background-image: url(${project.image});`}>
+          <div class="overlay flex items-end justify-center px-2 absolute h-full w-full bg-black-alpha-30">
+            <h2 class="bg-yellow text-xl text-black p-4">{project.title}</h2>
           </div>
-        </Link>
-      </div>
+        </header>
+        <div class="project-summary text-grey-80 p-4 text-center leading-normal">
+          <div>
+            <span class="border-b-2 border-grey-60">{project.tools}</span>
+          </div>  
+          <p class="my-3">{project.description}</p>
+        </div>
+      </Link>
+    </div>
   )
 }
 
