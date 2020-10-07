@@ -13,7 +13,7 @@ let BlogLink = ({match, blog, setBlog}) => {
       </div>
       <div class="w-full md:w-1/2 p-4">
         <div class="border-b border-gray-700 text-center">
-          <p class="text-sm md:text-base font-normal text-gray-700 -pt-1 -mb-1">
+          <p class="text-sm md:text-base font-normal text-gray-800 -pt-1 -mb-1">
             {blog.date}
           </p>
           <h3 class="font-bold text-3xl mb-2 inline-block text-gray-200">{blog.title}</h3>   
